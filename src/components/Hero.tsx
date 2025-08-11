@@ -94,7 +94,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 className="text-2xl lg:text-3xl text-gray-600 font-medium mb-6"
                 variants={itemVariants}
               >
-                {personalInfo.title}
+                {language === "es" ? personalInfo.title : personalInfo.titleEn}
               </motion.h2>
 
               <motion.p

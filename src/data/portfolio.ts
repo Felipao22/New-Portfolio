@@ -6,6 +6,7 @@ import terrazas from "../assets/terrazas.png";
 export const personalInfo = {
   name: "Felipe Aviani",
   title: "Desarrollador Front End",
+  titleEn: "Front End Developer",
   email: "felipeaviani@email.com",
   location: "Córdoba, Argentina",
   profileImage: "https://avatars.githubusercontent.com/u/98073203?v=4",
