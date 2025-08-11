@@ -1,0 +1,177 @@
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Menu, X, Download, Globe } from "lucide-react";
+import { Language } from "../types";
+
+interface HeaderProps {
+  language: Language;
+  onLanguageChange: (newLanguage: Language) => void;
+  onDownloadCV: (lang: Language) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({
+  language,
+  onLanguageChange,
+  onDownloadCV,
+}) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuItems = [
+    {
+      id: "about",
+      label: language === "es" ? "Sobre mí" : "About",
+      labelEn: "About",
+    },
+    {
+      id: "experience",
+      label: language === "es" ? "Experiencia" : "Experience",
+      labelEn: "Experience",
+    },
+    {
+      id: "skills",
+      label: language === "es" ? "Habilidades" : "Skills",
+      labelEn: "Skills",
+    },
+    {
+      id: "projects",
+      label: language === "es" ? "Proyectos" : "Projects",
+      labelEn: "Projects",
+    },
+    {
+      id: "contact",
+      label: language === "es" ? "Contacto" : "Contact",
+      labelEn: "Contact",
+    },
+  ];
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMenuOpen(false);
+  };
+
+  return (
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-200/50 shadow-sm"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <motion.div
+            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            whileHover={{ scale: 1.05 }}
+          >
+            Felipe.dev
+          </motion.div>
+
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {menuItems.map((item) => (
+              <motion.button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {item.label}
+              </motion.button>
+            ))}
+          </nav>
+
+          {/* Actions */}
+          <div className="hidden md:flex items-center space-x-4">
+            <motion.button
+              onClick={() => onLanguageChange(language === "es" ? "en" : "es")}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Globe className="w-4 h-4" />
+              <span className="text-sm font-medium">
+                {language === "es" ? "EN" : "ES"}
+              </span>
+            </motion.button>
+
+            <motion.button
+              onClick={() => onDownloadCV(language)}
+              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download className="w-4 h-4" />
+              {language === "es" ? "Descargar CV" : "Download Resume"}
+            </motion.button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <motion.button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-300"
+            whileTap={{ scale: 0.95 }}
+          >
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </motion.button>
+        </div>
+
+        {/* Mobile Menu */}
+        <motion.div
+          initial={false}
+          animate={{
+            height: isMenuOpen ? "auto" : 0,
+            opacity: isMenuOpen ? 1 : 0,
+          }}
+          transition={{ duration: 0.3 }}
+          className="md:hidden overflow-hidden"
+        >
+          <div className="pt-4 pb-2 space-y-2">
+            {menuItems.map((item) => (
+              <motion.button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors duration-300"
+                whileTap={{ scale: 0.95 }}
+              >
+                {item.label}
+              </motion.button>
+            ))}
+
+            <div className="flex flex-col gap-2 pt-2 border-t border-gray-200">
+              <motion.button
+                onClick={() =>
+                  onLanguageChange(language === "es" ? "en" : "es")
+                }
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-300"
+                whileTap={{ scale: 0.95 }}
+              >
+                <Globe className="w-4 h-4" />
+                <span className="text-sm font-medium">
+                  {language === "es" ? "English" : "Español"}
+                </span>
+              </motion.button>
+
+              <motion.button
+                onClick={() => onDownloadCV(language)}
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium"
+                whileTap={{ scale: 0.95 }}
+              >
+                <Download className="w-4 h-4" />
+                {language === "es" ? "Descargar CV" : "Download Resume"}
+              </motion.button>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </motion.header>
+  );
+};
+
+export default Header;
