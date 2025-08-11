@@ -5,11 +5,7 @@ import { personalInfo } from "../data/portfolio";
 import { Language } from "../types";
 import emailjs from "@emailjs/browser";
 
-import {
-  VITE_SERVICE_ID,
-  VITE_TEMPLATE_ID,
-  VITE_PUBLIC_KEY,
-} from "../../config";
+const { VITE_SERVICE_ID, VITE_TEMPLATE_ID, VITE_PUBLIC_KEY } = import.meta.env;
 
 interface ContactProps {
   language: Language;
