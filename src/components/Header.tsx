@@ -54,27 +54,28 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-200/50 shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-200/50 shadow-sm w-full"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          {/* Logo */}
           <motion.div
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
           >
             Felipe.dev
           </motion.div>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center flex-wrap gap-4">
             {menuItems.map((item) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300 text-sm sm:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -83,23 +84,23 @@ const Header: React.FC<HeaderProps> = ({
             ))}
           </nav>
 
-          {/* Actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Actions Desktop */}
+          <div className="hidden md:flex items-center flex-wrap gap-2">
             <motion.button
               onClick={() => onLanguageChange(language === "es" ? "en" : "es")}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-300"
+              className="flex items-center gap-1 sm:gap-2 px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-300 text-sm"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium">
+              <span className="font-medium">
                 {language === "es" ? "EN" : "ES"}
               </span>
             </motion.button>
 
             <motion.button
               onClick={() => onDownloadCV(language)}
-              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+              className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -164,7 +165,7 @@ const Header: React.FC<HeaderProps> = ({
                 whileTap={{ scale: 0.95 }}
               >
                 <Download className="w-4 h-4" />
-                {language === "es" ? "Descargar CV" : "Download Resume"}
+                {language === "es" ? "CV" : "Resume"}
               </motion.button>
             </div>
           </div>

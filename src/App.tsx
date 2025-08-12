@@ -34,7 +34,7 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-screen ">
       <Header
         language={language}
         onLanguageChange={handleLanguageChange}

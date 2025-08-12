@@ -70,7 +70,7 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {technologies.map((category, categoryIndex) => {
               const IconComponent = getCategoryIcon(category.category);
 
