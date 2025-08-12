@@ -109,7 +109,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8"
                 variants={itemVariants}
               >
-                <div className="flex items-center gap-6 text-gray-600 sm:col-span-2">
+                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-gray-600 sm:col-span-2">
                   <div className="flex items-center gap-2">
                     <Mail className="w-5 h-5 text-blue-600" />
                     <span>{personalInfo.email}</span>
