@@ -139,7 +139,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <p className="text-gray-400 flex items-center justify-center gap-2">
+            <p className="text-gray-400 flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
               © {currentYear} Felipe Aviani.
               {language === "es" ? " Hecho con" : " Made with"}
               <Heart className="w-4 h-4 text-red-500" fill="currentColor" />
