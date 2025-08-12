@@ -82,7 +82,12 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
           className="max-w-6xl mx-auto"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          animate={
+            typeof window !== "undefined" && window.innerWidth < 768
+              ? "visible"
+              : undefined
+          }
+          viewport={{ once: true, amount: 0 }}
           variants={containerVariants}
         >
           <motion.div className="text-center mb-16" variants={itemVariants}>
