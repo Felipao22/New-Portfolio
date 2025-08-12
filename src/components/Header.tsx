@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Download, Globe } from "lucide-react";
 import { Language } from "../types";
@@ -15,6 +15,7 @@ const Header: React.FC<HeaderProps> = ({
   onDownloadCV,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
 
   const menuItems = [
     {
@@ -46,14 +47,43 @@ const Header: React.FC<HeaderProps> = ({
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (!element) {
+      setIsMenuOpen(false);
+      return;
     }
-    setIsMenuOpen(false);
+    const wasOpen = isMenuOpen;
+
+    if (wasOpen) setIsMenuOpen(false);
+
+    const doScroll = () => {
+      const headerEl = headerRef.current ?? document.querySelector("header");
+      const headerHeight = headerEl
+        ? (headerEl as HTMLElement).offsetHeight
+        : 0;
+
+      const viewportOffset = window.visualViewport?.offsetTop ?? 0;
+
+      const rect = element.getBoundingClientRect();
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop || 0;
+
+      const top = rect.top + scrollTop - headerHeight - viewportOffset - 16;
+
+      window.scrollTo({
+        top: Math.max(0, Math.floor(top)),
+        behavior: "smooth",
+      });
+    };
+    if (wasOpen) {
+      window.setTimeout(doScroll, 350);
+    } else {
+      doScroll();
+    }
   };
 
   return (
     <motion.header
+      ref={headerRef}
       className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-200/50 shadow-sm w-full"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
