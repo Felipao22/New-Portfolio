@@ -10,9 +10,9 @@ export const personalInfo = {
   email: "felipeaviani@email.com",
   location: "Córdoba, Argentina",
   profileImage: "https://avatars.githubusercontent.com/u/98073203?v=4",
-  bio: "Desarrollador Front End apasionado con más de 2 años de experiencia creando interfaces web modernas y responsivas. Especializado en  React, Next.js, JavaScript, TypeScript, Redux Toolkit y diseño UX/UI.",
+  bio: "Desarrollador Front End apasionado con más de 3 años de experiencia creando interfaces web y móviles modernas y responsivas. Especializado en  React, Next.js, React Native, JavaScript, TypeScript, Redux Toolkit y diseño UX/UI.",
   bioEn:
-    "Passionate Front End Developer with over 3 years of experience creating modern and responsive web interfaces. Specialized in React, JavaScript and UX/UI design.",
+    "Passionate Front End Developer with over 3 years of experience creating modern and responsive web and mobile interfaces. Specialized in React, Next.js, React Native, JavaScript, TypeScript, Redux Toolkit and UX/UI design.",
   linkedin: "https://www.linkedin.com/in/felipeaviani/",
   github: "https://github.com/Felipao22",
 };
@@ -48,8 +48,8 @@ export const experience = [
     url: "https://proteccionlaboral.com.ar/",
     position: "Full Stack Developer",
     positionEn: "Full Stack Developer",
-    period: "Ago 2023 - Dic 2023",
-    periodEn: "Aug 2023 - Dec 2023",
+    period: "Ene 2023 - Dic 2023",
+    periodEn: "Jan 2023 - Dec 2023",
     description:
       "Lideré el desarrollo de una plataforma documental personalizada que mejoró en un 50% el rendimiento del proceso de creación de usuarios y en un 60% la eficiencia en carga y descarga de archivos. Gracias a estas mejoras se logró atraer nuevos clientes interesados en digitalizar su gestión documental.",
     descriptionEn:
@@ -85,6 +85,7 @@ export const technologies = [
     categoryEn: "Frameworks",
     skills: [
       { name: "Next.js", level: 85, icon: "⚡" },
+      { name: "React Native", level: 85, icon: "⚛️" },
       { name: "Redux", level: 80, icon: "🌀" },
       { name: "Zustand", level: 70, icon: "🐻" },
       { name: "React Router", level: 75, icon: "🔀" },
