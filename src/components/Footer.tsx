@@ -29,8 +29,8 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
               </h3>
               <p className="text-gray-400">
                 {language === "es"
-                  ? "Desarrollador Front End apasionado por crear experiencias web excepcionales."
-                  : "Front End Developer passionate about creating exceptional web experiences."}
+                  ? "Desarrollador Frontend & Mobile especializado en construir aplicaciones web y mobile con foco en rendimiento, escalabilidad y experiencia de usuario."
+                  : "Frontend & Mobile Developer specialized in building web and mobile applications with a focus on performance, scalability, and user experience."}
               </p>
             </motion.div>
 

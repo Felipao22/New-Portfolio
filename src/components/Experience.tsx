@@ -51,8 +51,8 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               {language === "es"
-                ? "Mi trayectoria profesional desarrollando soluciones web innovadoras"
-                : "My professional journey developing innovative web solutions"}
+                ? "Desarrollando aplicaciones web y mobile que optimizan procesos y generan impacto real en el negocio"
+                : "Building web and mobile applications that optimize processes and deliver real business impact"}
             </p>
           </motion.div>
 

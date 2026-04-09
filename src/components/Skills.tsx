@@ -65,8 +65,8 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               {language === "es"
-                ? "Tecnologías y herramientas que domino para crear experiencias web excepcionales"
-                : "Technologies and tools I master to create exceptional web experiences"}
+                ? "Tecnologías y herramientas que utilizo para desarrollar aplicaciones web y mobile enfocadas en rendimiento y experiencia de usuario"
+                : "Technologies and tools I use to build web and mobile applications focused on performance and user experience"}
             </p>
           </motion.div>
 

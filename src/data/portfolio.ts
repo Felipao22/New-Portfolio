@@ -2,17 +2,18 @@ import brucken from "../assets/brucken.png";
 import proteccion from "../assets/proteccion.png";
 import highlands from "../assets/highlands.png";
 import terrazas from "../assets/terrazas.png";
+import { getYearsOfExperience } from "../utils/getYearsExperience";
 
 export const personalInfo = {
   name: "Felipe Aviani",
-  title: "Desarrollador Front End",
-  titleEn: "Front End Developer",
-  email: "felipeaviani@email.com",
+  title: "Frontend & Mobile Developer",
+  titleEn: "Frontend & Mobile Developer",
+  email: "felipeaviani@gmail.com",
   location: "Córdoba, Argentina",
   profileImage: "https://avatars.githubusercontent.com/u/98073203?v=4",
-  bio: "Desarrollador Front End apasionado con más de 3 años de experiencia creando interfaces web y móviles modernas y responsivas. Especializado en  React, Next.js, React Native, JavaScript, TypeScript, Redux Toolkit y diseño UX/UI.",
-  bioEn:
-    "Passionate Front End Developer with over 3 years of experience creating modern and responsive web and mobile interfaces. Specialized in React, Next.js, React Native, JavaScript, TypeScript, Redux Toolkit and UX/UI design.",
+  bio: `Desarrollador Frontend & Mobile con más de ${getYearsOfExperience()} años de experiencia desarrollando aplicaciones web y móviles. Especializado en React, Next.js, React Native y TypeScript. Experiencia en plataformas de gestión, sistemas financieros y aplicaciones enfocadas en optimización de procesos, rendimiento y experiencia de usuario.`,
+  bioEn: `
+    Frontend & Mobile Developer with ${getYearsOfExperience()}+ years of experience building web and mobile applications. Specialized in React, Next.js, React Native, and TypeScript. Experienced in management platforms, fintech systems, and applications focused on process optimization, performance, and user experience.`,
   linkedin: "https://www.linkedin.com/in/felipeaviani/",
   github: "https://github.com/Felipao22",
 };
@@ -23,27 +24,49 @@ export const experience = [
     company: "PayFun",
     url: "https://www.payfun.com.ar/",
     position: "Front End Developer",
-    positionEn: "Front End Developer",
+    positionEn: "Frontend Developer",
     period: "Ago 2024 - Presente",
     periodEn: "Aug 2024 - Present",
     description:
-      "Formé parte del equipo de desarrollo del panel administrativo interno y de clientes, mejorando un 30% el rendimiento del sitio mediante optimización de renderizado y estados con Redux Toolkit. Incrementé un 40% la eficiencia en la gestión administrativa automatizando procesos clave como generación de reportes y control de accesos. Además, desarrollé un módulo de analítica transaccional con gráficos interactivos para facilitar la visualización de operaciones.",
+      "Participo en el desarrollo del panel administrativo interno y del portal de clientes, que gestionan operaciones financieras como débitos automáticos, órdenes de pago y transferencias. Optimicé el rendimiento del sistema en un 30% mediante mejoras en renderizado, manejo de estado global y carga de datos. Además, incrementé un 40% la eficiencia operativa automatizando procesos como generación de reportes, control de accesos y buscadores inteligentes. También desarrollé un módulo de analítica transaccional con gráficos interactivos para la toma de decisiones.",
     descriptionEn:
-      "I was part of the development team for the internal and customer administration panel, improving site performance by 30% through rendering and state optimization with Redux Toolkit. I increased administrative management efficiency by 40% by automating key processes such as report generation and access control. In addition, I developed a transactional analytics module with interactive graphics to facilitate the visualization of operations.",
+      "Contribute to the development of internal admin panels and client-facing platforms handling financial operations such as automatic debits, payment orders, and bank transfers. Improved system performance by 30% through optimized rendering, global state management, and data loading strategies. Increased operational efficiency by 40% by automating key processes such as report generation, role-based access control, and advanced search. Also developed a transactional analytics module with interactive charts for data-driven decision-making.",
     technologies: [
       "React",
       "Next.js",
-      "JavaScript",
       "TypeScript",
       "Redux Toolkit",
+      "Material UI",
       "Tailwind CSS",
       "Bootstrap",
       "Chart.js",
-      "React-pdf",
+      "React-PDF",
     ],
   },
   {
     id: 2,
+    company: "Protección Laboral",
+    url: "https://github.com/Felipao22/app-native-proteccion",
+    position: "React Native Developer",
+    positionEn: "React Native Developer",
+    period: "Ene 2026 - Presente",
+    periodEn: "Jan 2026 - Present",
+    description:
+      "Desarrollo una aplicación móvil para la gestión de constancias y documentación en campo, optimizando el acceso y registro de información. Implemento autenticación con persistencia de sesión, dashboard operativo y formularios con captura de imágenes y firma digital. Además, desarrollé un módulo de gestión documental con búsqueda, filtros, paginación, descarga y eliminación de archivos, enfocado en usabilidad y rendimiento en entornos móviles.",
+    descriptionEn:
+      "Developing a mobile application for field data collection and document management, improving accessibility and operational efficiency. Implemented authentication with persistent sessions, operational dashboards, and advanced forms including image capture and digital signature. Built a document management module with search, filters, pagination, download, and deletion features, focused on usability and performance in mobile environments.",
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Redux Toolkit",
+      "AsyncStorage",
+      "React Navigation",
+      "Axios",
+    ],
+  },
+  {
+    id: 3,
     company: "Protección Laboral",
     url: "https://proteccionlaboral.com.ar/",
     position: "Full Stack Developer",
@@ -51,17 +74,17 @@ export const experience = [
     period: "Ene 2023 - Dic 2023",
     periodEn: "Jan 2023 - Dec 2023",
     description:
-      "Lideré el desarrollo de una plataforma documental personalizada que mejoró en un 50% el rendimiento del proceso de creación de usuarios y en un 60% la eficiencia en carga y descarga de archivos. Gracias a estas mejoras se logró atraer nuevos clientes interesados en digitalizar su gestión documental.",
+      "Lideré el desarrollo de una plataforma documental personalizada, optimizando en un 50% el proceso de creación de usuarios y en un 60% la eficiencia en la carga y descarga de archivos. Estas mejoras facilitaron la digitalización de procesos y la incorporación de nuevos clientes.",
     descriptionEn:
-      "I led the development of a customized document management platform that improved the performance of the user creation process by 50% and the efficiency of file uploading and downloading by 60%. Thanks to these improvements, we were able to attract new customers interested in digitizing their document management.",
+      "Led the development of a custom document management platform, improving user creation performance by 50% and file upload/download efficiency by 60%. These improvements supported process digitalization and helped attract new clients.",
     technologies: [
       "React",
       "JavaScript",
-      "Redux Toolkit",
+      "Redux",
       "Ant Design",
       "Node.js",
       "Express",
-      "PostgresSQL",
+      "PostgreSQL",
       "Sequelize",
     ],
   },

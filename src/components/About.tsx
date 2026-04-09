@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { Code, Palette, Zap } from "lucide-react";
+import { Code, Smartphone, Zap } from "lucide-react";
 import { Language } from "../types";
 
 interface AboutProps {
@@ -25,27 +25,27 @@ const About: React.FC<AboutProps> = ({ language }) => {
   const highlights = [
     {
       icon: <Code size={24} />,
-      title: language === "es" ? "Código Limpio" : "Clean Code",
+      title: language === "es" ? "Código Escalable" : "Scalable Code",
       description:
         language === "es"
-          ? "Escribo código mantenible, escalable y eficiente siguiendo las mejores prácticas del sector."
-          : "Writing maintainable, scalable, and efficient code following industry best practices.",
+          ? "Desarrollo aplicaciones mantenibles y escalables utilizando buenas prácticas y arquitectura moderna."
+          : "I build maintainable and scalable applications using modern architecture and best practices.",
     },
     {
-      icon: <Palette size={24} />,
-      title: language === "es" ? "Enfoque UI/UX" : "UI/UX Focus",
+      icon: <Smartphone size={24} />,
+      title: language === "es" ? "Web & Mobile" : "Web & Mobile",
       description:
         language === "es"
-          ? "Diseño interfaces intuitivas y atractivas que garantizan una experiencia fluida y agradable."
-          : "I design intuitive and attractive interfaces that guarantee a smooth and enjoyable experience.",
+          ? "Experiencia desarrollando aplicaciones web y móviles con React, Next.js y React Native."
+          : "Experience building web and mobile applications using React, Next.js, and React Native.",
     },
     {
       icon: <Zap size={24} />,
-      title: language === "es" ? "Rendimiento" : "Performance",
+      title: language === "es" ? "Impacto en Negocio" : "Business Impact",
       description:
         language === "es"
-          ? "Optimizando aplicaciones para velocidad, accesibilidad y SEO."
-          : "Optimizing applications for speed, accessibility, and search engine optimization.",
+          ? "Optimizo rendimiento y automatizo procesos para mejorar la eficiencia y la experiencia del usuario."
+          : "I optimize performance and automate processes to improve efficiency and user experience.",
     },
   ];
 
@@ -79,23 +79,26 @@ const About: React.FC<AboutProps> = ({ language }) => {
           >
             <motion.p className="mb-6" variants={itemVariants}>
               {language === "es"
-                ? "Soy un desarrollador Frontend con experiencia en construir aplicaciones web modernas, accesibles y altamente performantes."
-                : "I'm a Frontend Developer with experience in building modern, accessible, and high-performance web applications."}
+                ? "Soy desarrollador Frontend & Mobile con experiencia construyendo aplicaciones web y mobiles modernas utilizando React, Next.js y React Native."
+                : "I'm a Frontend & Mobile Developer with experience building modern web and mobile applications using React, Next.js, and React Native."}
             </motion.p>
+
             <motion.p className="mb-6" variants={itemVariants}>
               {language === "es"
-                ? "Me especializo en crear interfaces limpias y responsivas que priorizan la experiencia del usuario sin sacrificar la eficiencia ni la mantenibilidad del código."
-                : "I specialize in creating clean, responsive interfaces that prioritize user experience without sacrificing code efficiency or maintainability."}
+                ? "He trabajado en plataformas administrativas, sistemas financieros y aplicaciones orientadas a la optimización de procesos, mejorando rendimiento, escalabilidad y experiencia de usuario."
+                : "I have worked on administrative platforms, fintech systems, and applications focused on process optimization, improving performance, scalability, and user experience."}
             </motion.p>
+
             <motion.p className="mb-6" variants={itemVariants}>
               {language === "es"
-                ? "Mi enfoque combina buenas prácticas de desarrollo, diseño centrado en el usuario y optimización continua, asegurando que cada proyecto entregue valor real y se adapte a las necesidades del negocio."
-                : "My approach combines best practices in development, user-centered design, and continuous optimization, ensuring that each project delivers real value and adapts to business needs."}
+                ? "Me enfoco en desarrollar interfaces eficientes y escalables, combinando buenas prácticas, manejo de estado y optimización de datos para lograr aplicaciones robustas."
+                : "I focus on building efficient and scalable interfaces by combining best practices, state management, and data optimization to deliver robust applications."}
             </motion.p>
+
             <motion.p variants={itemVariants}>
               {language === "es"
-                ? "Estoy comprometido con la mejora constante, aprendiendo nuevas tecnologías y metodologías para ofrecer soluciones innovadoras que destacan por su calidad y rendimiento."
-                : "I'm committed to continuous improvement, learning new technologies and methodologies to offer innovative solutions that stand out for their quality and performance."}
+                ? "Busco constantemente mejorar mis habilidades y aportar valor real al negocio mediante soluciones tecnológicas que optimicen procesos y mejoren la experiencia del usuario."
+                : "I continuously improve my skills and aim to deliver real business value through technology solutions that enhance processes and user experience."}
             </motion.p>
           </motion.div>
 
